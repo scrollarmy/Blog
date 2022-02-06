@@ -1,3 +1,9 @@
+# Blog de la comunidad ScrollArmy
+
+![Logo de la comu](assets/img/ScrArmy-small.png)
+
+Compartimos articulos de interes o escritos por miembros del chapter de Pergamino, siempre podes sumarte a escribir y mandar un PR o darte una vuelta por nuestros grupos de Whatsapp o Telegram para consultar algo.
+
 [![](https://i.imgur.com/zNBkzj1.png)](https://beautifuljekyll.com/plans/)
 
 # Beautiful Jekyll
