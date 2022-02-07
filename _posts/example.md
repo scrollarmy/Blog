@@ -6,15 +6,16 @@ comments: false
 readtime: true
 ---
 
-<!-- Si el articulo queres que sea anonimo no pasa nada, sino colocá alguno de los medios de contacto para poder compartirlos en el post -->
+# Sobre el autor
 
+Si el articulo queres que sea anonimo no pasa nada, sino colocá **al menos uno** de los medios de contacto para poder compartirlos en el post
 
-<!-- Nombre, Apellido o Nick que queres que se muestre -->
-<!-- Email? -->
-<!-- Twitter? -->
-<!-- Instagram? -->
-<!-- Linkedin? -->
-<!-- De donde sacamos una fotito tuya? ponemos la de una red social o la del señor X de los simpsons?-->
+- Nombre, Apellido o Nick que queres que se muestre
+- Email?
+- Twitter?
+- Instagram?
+- Linkedin?
+- De donde sacamos una fotito tuya? ponemos la de una red social o la del señor X de los simpsons?
 
 # Datos, consejos, tips.
 Dejamos unos tips para redactar un articulo que sea amigable de leer
