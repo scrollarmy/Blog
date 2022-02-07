@@ -12,9 +12,10 @@ Compartimos articulos de interes o escritos por miembros del chapter de Pergamin
 
 ![](https://i.imgur.com/yXFhuSH.png)
 
+
 2. Lo clonas a tu compu local (`git clone <url del fork tuyo>`)
 3. Te moves a una branch de nuevo post (`git checkout new-post`)
-4. Te copias el contenido de `/_post/example.md` (*También contiene ayudas para la hora de escribir* ) y lo guardas con el siguiente formato `YYYY-MM-DD-TITULO.md`
+4. Te copias el contenido de [/_posts/example.md](_posts/example.md) (*También contiene ayudas para la hora de escribir* ) y lo guardas con el siguiente formato `YYYY-MM-DD-TITULO.md`
 
 5. Limpiar los placeholders y ejemplos, dejar solo lo que vayas a utilizar
 6. Te pones a escribir trancu y cuando lo tenes listo subis todo con un commit (`git commit -m "sarasa de detalle" #Esto a tu fork local`)
@@ -24,8 +25,7 @@ Compartimos articulos de interes o escritos por miembros del chapter de Pergamin
 ---
 ## Formatos y herramientas para crear el post
 
-En la carpeta de /_post se encuentra el archivo example.md para ayudarse con el formato y entender como funciona la herramienta, a continuación revisamos algunos casos que no estan en el común de markdown
-
+En [/_posts/example.md](_posts/example.md) hay tips, consejos y algunas ideas de como comenzar a escribir para tener un formato basico, a continuación revisamos elementos de markdown asi como también de jekill para el armado de posts.
 ### Cabecera
 
 ~~~
