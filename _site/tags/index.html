@@ -12,8 +12,6 @@
   <title>Tag Index</title>
 
   
-  <meta name="author" content="Admin">
-  
 
   <meta name="description" content="{% assign date_format = site.date_format | default: &quot;%B %-d, %Y&quot; %} {%- capture site_tags -%} {%- for tag in site.tags -%} {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%} {%- endfor -%} {%- endcapture -%} {%- assign tags_list = site_tags | split:',' | sort -%} {%- for tag...">
 
@@ -293,16 +291,8 @@
       
       <p class="copyright text-muted">
       
-        Admin
-        &nbsp;&bull;&nbsp;
-      
       2022
 
-      
-        &nbsp;&bull;&nbsp;
-        <span class="author-site">
-          <a href="http://localhost:4000/">ScrollArmy.com.ar</a>
-        </span>
       
 
       
