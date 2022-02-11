@@ -7,8 +7,12 @@ table{
 .highlight > pre{
     border-left: 0.4375rem solid #ffc107 !important;
 }
+code{
+    color: #f1c40f;
+    background-color: inherit !important;
+}
 
-code, .code pre , .lineno{
+.code pre , .lineno{
     color: white !important;
 }
 
@@ -24,4 +28,10 @@ code, .code pre , .lineno{
 .box-error {
     background-color: rgba(255,0,0,0.10);
     border-color: #c0392b;
+}
+
+.pagination .page-item .page-link{
+    color: #ffc107;
+    background-color: #2f2c3d;
+    border-color: #ffc107 !important;
 }

@@ -9,11 +9,11 @@
 
   
 
-  <title>ScrollArmy Blog</title>
+  <title>Como publicar una web con presupuesto cero</title>
 
   
 
-  <meta name="description" content="Generado con jekill para compartir publicaciones en favor de la comunidad">
+  <meta name="description" content="El paso a paso y herramientas que usamos para levantar nuestra web">
 
   
 
@@ -78,17 +78,19 @@
 
   
   <meta property="og:site_name" content="ScrollArmy Blog">
-  <meta property="og:title" content="ScrollArmy Blog">
-  <meta property="og:description" content="Generado con jekill para compartir publicaciones en favor de la comunidad">
+  <meta property="og:title" content="Como publicar una web con presupuesto cero">
+  <meta property="og:description" content="El paso a paso y herramientas que usamos para levantar nuestra web">
 
   
   <meta property="og:image" content="http://localhost:4000/assets/img/ScrArmy-small.png">
   
 
   
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="http://localhost:4000/">
-  <link rel="canonical" href="http://localhost:4000/">
+  <meta property="og:type" content="article">
+  <meta property="og:article:author" content="">
+  <meta property="og:article:published_time" content="2022-02-07T00:00:00+00:00">
+  <meta property="og:url" content="http://localhost:4000/2022-02-07-sitio-web-con-presupuesto-minimo/">
+  <link rel="canonical" href="http://localhost:4000/2022-02-07-sitio-web-con-presupuesto-minimo/">
   
 
   
@@ -97,8 +99,8 @@
   <meta name="twitter:site" content="@scrollarmy">
   <meta name="twitter:creator" content="@scrollarmy">
 
-  <meta property="twitter:title" content="ScrollArmy Blog">
-  <meta property="twitter:description" content="Generado con jekill para compartir publicaciones en favor de la comunidad">
+  <meta property="twitter:title" content="Como publicar una web con presupuesto cero">
+  <meta property="twitter:description" content="El paso a paso y herramientas que usamos para levantar nuestra web">
 
   
   <meta name="twitter:image" content="http://localhost:4000/assets/img/ScrArmy-small.png">
@@ -224,15 +226,30 @@
   <div class="container-md">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-        <div class="page-heading">
-          <h1>ScrollArmy Blog</h1>
+        <div class="post-heading">
+          <h1>Como publicar una web con presupuesto cero</h1>
           
             
-              <hr class="small">
-              <span class="page-subheading">Generado con jekill para compartir publicaciones en favor de la comunidad</span>
+              <h2 class="post-subheading">El paso a paso y herramientas que usamos para levantar nuestra web</h2>
             
           
 
+          
+            <span class="post-meta">Posted on February 7, 2022</span>
+            
+            
+              <!--- "ReadTime on GitHub Jekyll" (c) 2020 Ruby Griffith Ramirez, MIT License -->
+
+
+
+
+
+
+  
+  <span class="post-meta"><span class="d-none d-md-inline middot">&middot;</span> 2 minute read</span>
+
+
+            
           
         </div>
       </div>
@@ -245,102 +262,153 @@
 
 
 
-<div class=" container-md " role="main">
+<div class=" container-md ">
   <div class="row">
     <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+
+      
+
+      
+
+      <article role="main" class="blog-post">
+        <h1 id="como-publicar-una-web-con-presupuesto-cero-o-casi">Como publicar una web con presupuesto cero (o casi)</h1>
+<p>La idea del post es mostrar como generar una web estatica con un presupuesto minimo utilizando cloudflare como dns y github haciendo de hosting. Con esto vamos a poder tener administrar subdominios (<em>en un proximo post</em>) y también generar cambios en la web simplemente pusheando a master, un CD para el pueblo casi.</p>
+
+<p><img src="https://media0.giphy.com/media/QAh4fa5BD95ZZKb372/giphy.gif?cid=ecf05e47b52g98vg2x8jj9430g7pisbkppcobjq6t4vee24f&amp;rid=giphy.gif&amp;ct=g" alt="Let's see your budget" class="mx-auto d-block" /></p>
+
+<p>Vamos a sumar un dominio .com.ar que a fecha de hoy vale $475 ARS el registro anual, unos 2.37 USD Blue, en caso de no comprar el dominio Github nos da uno del formato <code class="language-plaintext highlighter-rouge">https://usuario.github.io</code> pero perdemos la chance de sumar subdominios y seguir metiendo cosas a nuestra web principal ya que podemos meter un blog, una pagina de status de servicios o cualquier cosa que podamos meterle que no requiera un server complejo y pueda hacerse mediante github actions o similar.</p>
+
+<hr />
+
+<h2 id="puesta-en-marcha">Puesta en marcha</h2>
+
+<ol>
+  <li>Configurar sitio en cloudflare
+    <ol>
+      <li>En el panel principal vamos a ir a <code class="language-plaintext highlighter-rouge">Sitios</code> y presionamos en <code class="language-plaintext highlighter-rouge">add</code></li>
+      <li>
+        <p>Vamos a agregar 2 registros CNAME apuntando al repositorio
+ <code class="language-plaintext highlighter-rouge">CNAME  www usuario.github.io</code></p>
+
+        <p><code class="language-plaintext highlighter-rouge">CNAME  &lt;dominio&gt;.com.ar   usuario.github.io</code></p>
+
+        <p><img src="https://i.imgur.com/8F6p76V.png" alt="CloudFlare config" /></p>
+      </li>
+      <li>
+        <p>Guardamos los nombres de los servidores que tendremos que delegar en el paso siguiente</p>
+
+        <p><code class="language-plaintext highlighter-rouge">addilyn.ns.cloudflare.com</code></p>
+
+        <p><code class="language-plaintext highlighter-rouge">bruce.ns.cloudflare.com</code></p>
+      </li>
+      <li>Despues vamos la sección de SSL/TLS, configuramos el modo de encriptación como Full y también activamos las recomendaciones de SSL/TLS</li>
+    </ol>
+
+    <p><img src="https://i.imgur.com/bLQtqjV.png" alt="CloudFlare config" /></p>
+  </li>
+  <li>Comprar y delegar el domino
+    <ol>
+      <li>Una vez adentro del TAD nos vamos a “delegaciones NIC” y seleccionamos delegar al dominio deseado
+ <img src="https://i.imgur.com/8Hfjza8.png" alt="TAD NIC config" />
+ <img src="https://i.imgur.com/QaYPGYf.png" alt="TAD NIC config" />
+ Luego de guardar todo puede demorar hasta 30min hasta verse reflejado el cambio</li>
+    </ol>
+  </li>
+  <li>
+    <p>Mientras que esperamos que se apliquen los cambios vamos a <del>robar</del> hacer nuestra y subirla a la branch main de nuestro repo</p>
+
+    <p>La web de Scrollarmy se basa en la template de <strong>Inovatik</strong>. Acá el <a href="https://www.behance.net/gallery/81106457/Leno-Free-Mobile-App-Landing-Page-HTML-Template">Link de descarga</a></p>
+
+    <p>Modificando el css y cargando nuestra info pasamos de esto
+ <img src="https://i.imgur.com/qUcWevV.png" alt="Template Original" />
+ a esto
+ <img src="https://i.imgur.com/mNIOobD.png" alt="Sitio actual" /></p>
+
+    <p>Ya con el sitio a gusto lo subimos al repo.</p>
+  </li>
+  <li>
+    <p>Configurar git pages:</p>
+
+    <p>Esto <code class="language-plaintext highlighter-rouge">solo se hace cuando se tiene un dominio personalizado</code> y no los que entrega Github por defecto</p>
+
+    <p>Vamos a ir a la configuración del repositorio donde tenemos nuestra web y luego a la seccion pages</p>
+
+    <p>Por defecto la rama master esta seleccionada y nosotros vamos a configurar los siguientes puntos
+ <img src="https://i.imgur.com/irg5TKy.png" alt="Github pages" /></p>
+
+    <ul>
+      <li>
+        <p>Custom domain: 
+ colocaremos nuestro dominio, que compramos previamente</p>
+      </li>
+      <li>
+        <p>Deshabilitar trafico seguro, esto lo hacemos ya que desde cloudflare estamos controlando esta feature.</p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="con-que-seguimos">¿Con que seguimos?</h2>
+
+<p>Con estos pasos ya tenes tu web alojada en github con https todo gratuito o por muy bajo costo, administrado en conjunto con cloudflare lo que nos va a permitir generar subdominios con la misma metodologia, subiendo nuestros archivos a un repositorio nuevo, esto lo vamos a ver en otra entrada del blog.</p>
+
+      </article>
+
       
 
       
 
+      
+        <!-- Check if any share-links are active -->
 
 
-<div class="posts-list">
+
+
+<section id = "social-share-section">
+  <span class="sr">Compartir: </span>
+
   
-  <article class="post-preview">
-    
-
-    
-
-    <a href="http://localhost:4000/2022-02-07-sitio-web-con-presupuesto-minimo/">
-      <h2 class="post-title">Como publicar una web con presupuesto cero</h2>
-
-      
-        <h3 class="post-subtitle">
-        El paso a paso y herramientas que usamos para levantar nuestra web
-        </h3>
-      
+    <a href="https://twitter.com/intent/tweet?text=Como+publicar+una+web+con+presupuesto+cero&url=http%3A%2F%2Flocalhost%3A4000%2F2022-02-07-sitio-web-con-presupuesto-minimo%2F"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fab fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
     </a>
-
-    <p class="post-meta">
-      
-      Posted on February 7, 2022
-    </p>
-
-    
-
-    
-    
-
-    <div class="post-entry">
-      
-      Como publicar una web con presupuesto cero (o casi) La idea del post es mostrar como generar una web estatica con un presupuesto minimo utilizando cloudflare como dns y github haciendo de hosting. Con esto vamos a poder tener administrar subdominios (en un proximo post) y también generar cambios en...
-      
-      
-        <a href="http://localhost:4000/2022-02-07-sitio-web-con-presupuesto-minimo/" class="post-read-more">[Read&nbsp;More]</a>
-      
-    </div>
-    
-
-    
-
-   </article>
   
-  <article class="post-preview">
-    
 
-    
-
-    <a href="http://localhost:4000/2021-09-30-relevamiento-tecnologico/">
-      <h2 class="post-title">Relevamiento tecnológico ScrollArmy 2021</h2>
-
-      
-        <h3 class="post-subtitle">
-        Encuesta de la segundo semestre 21
-        </h3>
-      
+  
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2F2022-02-07-sitio-web-con-presupuesto-minimo%2F"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fab fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
     </a>
-
-    <p class="post-meta">
-      
-      Posted on September 30, 2021
-    </p>
-
-    
-
-    
-    
-
-    <div class="post-entry">
-      
-      En esta entrada compartimos los resultados de la encuesta realizada en el segundo semestre del 2021. Recordá que podes acceder a todos los datos en la siguiente spreadsheet con los resultados crudos ya que acá solo mostramos una parte de la info recolectada y por acá esta el resumen de...
-      
-      
-        <a href="http://localhost:4000/2021-09-30-relevamiento-tecnologico/" class="post-read-more">[Read&nbsp;More]</a>
-      
-    </div>
-    
-
-    
-
-   </article>
   
-</div>
 
+  
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2F2022-02-07-sitio-web-con-presupuesto-minimo%2F"
+      class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
+      <span class="fab fa-fw fa-linkedin" aria-hidden="true"></span>
+      <span class="sr-only">LinkedIn</span>
+    </a>
+  
+
+  
+
+  
+
+</section>
 
 
 
       
 
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous">
+          <a class="page-link" href="/2021-09-30-relevamiento-tecnologico/" data-toggle="tooltip" data-placement="top" title="Relevamiento tecnológico ScrollArmy 2021">&larr; Previous Post</a>
+        </li>
+        
+        
+      </ul>
       
 
     </div>

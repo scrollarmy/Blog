@@ -42,7 +42,7 @@ Vamos a sumar un dominio .com.ar que a fecha de hoy vale $475 ARS el registro an
     ![TAD NIC config](https://i.imgur.com/QaYPGYf.png)
     Luego de guardar todo puede demorar hasta 30min hasta verse reflejado el cambio
 
-3. Mientras que esperamos que se apliquen los cambios vamos a <del>robar<del> hacer nuestra y subirla a la branch main de nuestro repo
+3. Mientras que esperamos que se apliquen los cambios vamos a <del>robar</del> hacer nuestra y subirla a la branch main de nuestro repo
 
     La web de Scrollarmy se basa en la template de **Inovatik**. Acá el [Link de descarga](https://www.behance.net/gallery/81106457/Leno-Free-Mobile-App-Landing-Page-HTML-Template)
 
