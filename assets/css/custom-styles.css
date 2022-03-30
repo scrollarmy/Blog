@@ -12,7 +12,7 @@ code{
     background-color: inherit !important;
 }
 
-.code pre , .lineno{
+.code pre , pre, .lineno{
     color: white !important;
 }
 
